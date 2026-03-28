@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body { font-family: 'Inter', system-ui, sans-serif; background: #0a0e1a; color: #f1f5f9; }
+
+@layer components {
+  .card { @apply bg-[#111827]/70 backdrop-blur-xl border border-white/[0.06] rounded-2xl; }
+  .card-hover { @apply card hover:border-emerald-500/20 hover:shadow-lg hover:shadow-emerald-500/5 transition-all duration-500; }
+  .btn-primary { @apply bg-gradient-to-r from-emerald-500 to-emerald-400 hover:from-emerald-400 hover:to-emerald-300 text-gray-900 font-semibold py-3 px-6 rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/25 active:scale-[0.97]; }
+  .btn-secondary { @apply bg-white/[0.06] hover:bg-white/[0.1] text-gray-300 font-medium py-3 px-6 rounded-xl border border-white/[0.06] transition-all duration-300 active:scale-[0.97]; }
+  .btn-danger { @apply bg-red-500/10 hover:bg-red-500/20 text-red-400 font-medium py-3 px-6 rounded-xl border border-red-500/20 transition-all duration-300; }
+  .input-field { @apply w-full px-4 py-3.5 bg-white/[0.04] border border-white/[0.08] rounded-xl focus:ring-2 focus:ring-emerald-500/40 focus:border-emerald-500/40 outline-none transition-all duration-300 text-white placeholder-gray-500; }
+  .badge { @apply inline-flex items-center px-2.5 py-1 rounded-lg text-[11px] font-semibold tracking-wide uppercase border; }
+}
+
+@keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes scaleIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
+
+.anim-fade-up { animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.anim-fade-in { animation: fadeIn 0.4s ease both; }
+.anim-scale-in { animation: scaleIn 0.3s ease both; }
+.d1 { animation-delay: 50ms; } .d2 { animation-delay: 100ms; } .d3 { animation-delay: 150ms; } .d4 { animation-delay: 200ms; } .d5 { animation-delay: 250ms; }
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(148,163,184,0.15); border-radius: 10px; }
+::selection { background: rgba(16,185,129,0.3); }
